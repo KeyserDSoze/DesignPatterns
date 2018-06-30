@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Creational.Singleton
 {
-    public sealed class LazySingleton : IDesignPattern
+    public sealed class NestedSingleton : IDesignPattern
     {
-        private LazySingleton()
+        private NestedSingleton()
         {
         }
-        public static LazySingleton Instance { get { return Nested.instance; } }
+        public static NestedSingleton Instance { get { return Nested.instance; } }
         private class Nested
         {
             static Nested()
             {
             }
-            internal static readonly LazySingleton instance = new LazySingleton();
+            internal static readonly NestedSingleton instance = new NestedSingleton();
         }
     }
 }
