@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="Creational\Singleton\DoubleCheckThreadSafeSingleton.cs" />
     <Compile Include="Creational\Singleton\NestedSingleton.cs" />
-    <Compile Include="Creational\Singleton\LazyV4Singleton.cs" />
+    <Compile Include="Creational\Singleton\LazySingleton.cs" />
     <Compile Include="Creational\Singleton\NormalSingleton.cs" />
     <Compile Include="Creational\Singleton\ThreadSafeNoLockSingleton.cs" />
     <Compile Include="Creational\Singleton\ThreadSafeSingleton.cs" />
