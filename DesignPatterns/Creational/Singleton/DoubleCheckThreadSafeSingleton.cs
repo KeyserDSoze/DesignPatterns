@@ -28,6 +28,7 @@ namespace DesignPatterns.Creational.Singleton
                         }
                     }
                 }
+                Console.WriteLine("Get Instance");
                 return instance;
             }
         }

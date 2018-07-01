@@ -24,6 +24,7 @@ namespace DesignPatterns.Creational.Singleton
                     {
                         instance = new ThreadSafeSingleton();
                     }
+                    Console.WriteLine("Get Instance");
                     return instance;
                 }
             }

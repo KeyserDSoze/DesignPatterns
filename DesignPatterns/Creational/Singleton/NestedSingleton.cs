@@ -12,7 +12,7 @@ namespace DesignPatterns.Creational.Singleton
         {
             Console.WriteLine("instance of an object " + this.GetMyName());
         }
-        public static NestedSingleton Instance { get { return Nested.instance; } }
+        public static NestedSingleton Instance { get { Console.WriteLine("Get Instance"); return Nested.instance; } }
         private class Nested
         {
             internal static readonly NestedSingleton instance = new NestedSingleton();

@@ -21,6 +21,7 @@ namespace DesignPatterns.Creational.Singleton
                 {
                     instance = new NormalSingleton();
                 }
+                Console.WriteLine("Get Instance");
                 return instance;
             }
         }
