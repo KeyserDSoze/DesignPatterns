@@ -50,8 +50,8 @@
     <Compile Include="Creational\Singleton\01 - NormalSingleton.cs" />
     <Compile Include="Creational\Singleton\04 - ThreadSafeNoLockSingleton.cs" />
     <Compile Include="Creational\Singleton\02 - ThreadSafeSingleton.cs" />
-    <Compile Include="Creational\Singleton\11 - TimedLazyMultiton.cs" />
-    <Compile Include="Creational\Singleton\12 - TimedMultiton.cs" />
+    <Compile Include="Creational\Singleton\12 - TimedLazyMultiton.cs" />
+    <Compile Include="Creational\Singleton\11 - TimedMultiton.cs" />
     <Compile Include="Creational\Singleton\07 - TimedSingleton.cs" />
     <Compile Include="Creational\Singleton\08 - OperationalSingleton.cs" />
     <Compile Include="DesignPattern.cs" />
