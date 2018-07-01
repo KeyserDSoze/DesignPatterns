@@ -48,6 +48,7 @@
     <Compile Include="Creational\Singleton\NormalSingleton.cs" />
     <Compile Include="Creational\Singleton\ThreadSafeNoLockSingleton.cs" />
     <Compile Include="Creational\Singleton\ThreadSafeSingleton.cs" />
+    <Compile Include="DesignPattern.cs" />
     <Compile Include="IDesignPattern.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Creational.Singleton
 {
-    public sealed class NormalSingleton : IDesignPattern
+    public sealed class NormalSingleton : DesignPattern, IDesignPattern
     {
         private static NormalSingleton instance = null;
         private NormalSingleton()
         {
+            Console.WriteLine("instance of an object "+ this.GetMyName());
         }
         public static NormalSingleton Instance
         {

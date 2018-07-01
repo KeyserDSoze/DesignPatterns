@@ -6,21 +6,13 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Creational.Singleton
 {
-    public sealed class ThreadSafeNoLockSingleton : IDesignPattern
+    public sealed class ThreadSafeNoLockSingleton : DesignPattern, IDesignPattern
     {
-        private static readonly ThreadSafeNoLockSingleton instance = new ThreadSafeNoLockSingleton();
-        static ThreadSafeNoLockSingleton()
-        {
-        }
         private ThreadSafeNoLockSingleton()
         {
+            Console.WriteLine("instance of an object " + this.GetMyName());
         }
-        public static ThreadSafeNoLockSingleton Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
+        //autoproperty
+        public static ThreadSafeNoLockSingleton Instance { get; } = new ThreadSafeNoLockSingleton();
     }
 }

@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Creational.Singleton
 {
-    public sealed class ThreadSafeSingleton : IDesignPattern
+    public sealed class ThreadSafeSingleton : DesignPattern, IDesignPattern
     {
         private static ThreadSafeSingleton instance = null;
         private static readonly object trafficlight = new object();
         ThreadSafeSingleton()
         {
+            Console.WriteLine("instance of an object " + this.GetMyName());
         }
         public static ThreadSafeSingleton Instance
         {
