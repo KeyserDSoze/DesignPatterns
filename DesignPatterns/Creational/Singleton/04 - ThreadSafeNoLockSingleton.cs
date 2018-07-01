@@ -15,5 +15,6 @@ namespace DesignPatterns.Creational.Singleton
         }
         //autoproperty
         public static ThreadSafeNoLockSingleton Instance { get; } = new ThreadSafeNoLockSingleton();
+        public static void Test() { Console.WriteLine("When you call this static Method the instance is however created."); return; }
     }
 }
