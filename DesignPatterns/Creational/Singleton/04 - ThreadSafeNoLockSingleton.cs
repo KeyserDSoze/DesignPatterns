@@ -11,6 +11,7 @@ namespace DesignPatterns.Creational.Singleton
         private ThreadSafeNoLockSingleton()
         {
             Console.WriteLine("instance of an object " + this.GetMyName());
+            Console.WriteLine("Autoproperty, in this case, does not show \"Get Instance\" due to my will to not change the beauty of code.");
         }
         //autoproperty
         public static ThreadSafeNoLockSingleton Instance { get; } = new ThreadSafeNoLockSingleton();

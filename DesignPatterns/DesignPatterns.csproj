@@ -42,12 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Creational\Singleton\DoubleCheckThreadSafeSingleton.cs" />
-    <Compile Include="Creational\Singleton\NestedSingleton.cs" />
-    <Compile Include="Creational\Singleton\LazySingleton.cs" />
-    <Compile Include="Creational\Singleton\NormalSingleton.cs" />
-    <Compile Include="Creational\Singleton\ThreadSafeNoLockSingleton.cs" />
-    <Compile Include="Creational\Singleton\ThreadSafeSingleton.cs" />
+    <Compile Include="Creational\Singleton\03 - DoubleCheckThreadSafeSingleton.cs" />
+    <Compile Include="Creational\Singleton\09 - LazyMultiton.cs" />
+    <Compile Include="Creational\Singleton\08 - Multiton.cs" />
+    <Compile Include="Creational\Singleton\05 - NestedSingleton.cs" />
+    <Compile Include="Creational\Singleton\06 - LazySingleton.cs" />
+    <Compile Include="Creational\Singleton\01 - NormalSingleton.cs" />
+    <Compile Include="Creational\Singleton\04 - ThreadSafeNoLockSingleton.cs" />
+    <Compile Include="Creational\Singleton\02 - ThreadSafeSingleton.cs" />
+    <Compile Include="Creational\Singleton\11 - TimedLazyMultiton.cs" />
+    <Compile Include="Creational\Singleton\10 - TimedMultiton.cs" />
+    <Compile Include="Creational\Singleton\07 - TimedSingleton.cs" />
     <Compile Include="DesignPattern.cs" />
     <Compile Include="IDesignPattern.cs" />
     <Compile Include="Program.cs" />
