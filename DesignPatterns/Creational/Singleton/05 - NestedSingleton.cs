@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Creational.Singleton
 {
-    public sealed class NestedSingleton : DesignPattern, IDesignPattern
+    public sealed class NestedSingleton : DesignPattern, IDesignPattern, ITwoAttempts
     {
         private NestedSingleton()
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Creational.Singleton
 {
-    public sealed class ThreadSafeSingleton : DesignPattern, IDesignPattern
+    public sealed class ThreadSafeSingleton : DesignPattern, IDesignPattern, ITwoAttempts
     {
         private static ThreadSafeSingleton instance = null;
         private static readonly object trafficlight = new object();

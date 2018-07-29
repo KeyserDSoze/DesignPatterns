@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Creational.Singleton
 {
-    public sealed class OperationalSingleton : DesignPattern, IDesignPattern
+    public sealed class OperationalSingleton : DesignPattern, IDesignPattern, ITwoAttempts
     {
         private static OperationalSingleton instance = null;
         private static int numberOfOperation = 0;

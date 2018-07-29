@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Creational.Singleton
 {
-    public sealed class LazyMultiton : DesignPattern, IDesignPattern
+    public sealed class LazyMultiton : DesignPattern, IDesignPattern, ITwoAttempts
     {
         private static readonly ConcurrentDictionary<string, Lazy<LazyMultiton>> Instances = new ConcurrentDictionary<string, Lazy<LazyMultiton>>();
         public static LazyMultiton GetInstance(string Key = "Test")

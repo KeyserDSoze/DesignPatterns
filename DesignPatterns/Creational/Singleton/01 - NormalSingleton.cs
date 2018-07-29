@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Creational.Singleton
 {
-    public sealed class NormalSingleton : DesignPattern, IDesignPattern
+    public sealed class NormalSingleton : DesignPattern, IDesignPattern, ITwoAttempts
     {
         private static NormalSingleton instance = null;
         private NormalSingleton()

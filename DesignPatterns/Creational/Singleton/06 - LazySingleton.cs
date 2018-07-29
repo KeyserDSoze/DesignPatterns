@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Creational.Singleton
 {
-    public sealed class LazySingleton : DesignPattern, IDesignPattern
+    public sealed class LazySingleton : DesignPattern, IDesignPattern, ITwoAttempts
     {
         private static readonly Lazy<LazySingleton> lazy = new Lazy<LazySingleton>(() => new LazySingleton());
         public static LazySingleton Instance { get { Console.WriteLine("Get Instance"); return lazy.Value; } }

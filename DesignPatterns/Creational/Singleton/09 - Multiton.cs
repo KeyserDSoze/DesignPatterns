@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Creational.Singleton
 {
-    public sealed class Multiton : DesignPattern, IDesignPattern
+    public sealed class Multiton : DesignPattern, IDesignPattern, ITwoAttempts
     {
         private static Dictionary<string, Multiton> instances = new Dictionary<string, Multiton>();
         private Multiton()

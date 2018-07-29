@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Creational.Singleton
 {
-    public sealed class ThreadSafeNoLockSingleton : DesignPattern, IDesignPattern
+    public sealed class ThreadSafeNoLockSingleton : DesignPattern, IDesignPattern, ITwoAttempts
     {
         private ThreadSafeNoLockSingleton()
         {

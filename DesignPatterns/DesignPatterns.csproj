@@ -42,6 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Creational\AbstractFactory\AbstractFactory.cs" />
+    <Compile Include="Creational\Builder\Builder.cs" />
+    <Compile Include="Creational\Factory\Factory.cs" />
+    <Compile Include="Creational\InversionOfControl\DependencyInjection.cs" />
+    <Compile Include="Creational\InversionOfControl\IoCDependencyInjection.cs" />
+    <Compile Include="Creational\Prototype\PrototypeWithICloneable.cs" />
+    <Compile Include="Creational\Prototype\SimplePrototype.cs" />
+    <Compile Include="Creational\ServiceLocator\IoCServiceLocator.cs" />
+    <Compile Include="Creational\ServiceLocator\LazyServiceLocator.cs" />
+    <Compile Include="Creational\ServiceLocator\ServiceLocator.cs" />
+    <Compile Include="Creational\ServiceLocator\SingletonServiceLocator.cs" />
     <Compile Include="Creational\Singleton\03 - DoubleCheckThreadSafeSingleton.cs" />
     <Compile Include="Creational\Singleton\10 - LazyMultiton.cs" />
     <Compile Include="Creational\Singleton\09 - Multiton.cs" />
@@ -56,11 +67,13 @@
     <Compile Include="Creational\Singleton\08 - OperationalSingleton.cs" />
     <Compile Include="DesignPattern.cs" />
     <Compile Include="IDesignPattern.cs" />
+    <Compile Include="ITwoAttempts.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

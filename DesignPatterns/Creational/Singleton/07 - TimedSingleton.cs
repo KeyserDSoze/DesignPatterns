@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Creational.Singleton
 {
-    public sealed class TimedSingleton : DesignPattern, IDesignPattern
+    public sealed class TimedSingleton : DesignPattern, IDesignPattern, ITwoAttempts
     {
         private static TimedSingleton instance = null;
         private static DateTime LastTime = new DateTime(1970, 1, 1);
