@@ -47,6 +47,7 @@
     <Compile Include="Creational\Factory\Factory.cs" />
     <Compile Include="Creational\InversionOfControl\DependencyInjection.cs" />
     <Compile Include="Creational\InversionOfControl\IoCDependencyInjection.cs" />
+    <Compile Include="Creational\ObjectPool\ObjectPool.cs" />
     <Compile Include="Creational\Prototype\PrototypeWithICloneable.cs" />
     <Compile Include="Creational\Prototype\SimplePrototype.cs" />
     <Compile Include="Creational\ServiceLocator\IoCServiceLocator.cs" />
