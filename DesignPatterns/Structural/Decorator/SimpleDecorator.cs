@@ -41,7 +41,6 @@ namespace DesignPatterns.Structural.Decorator
     //decorator
     public interface IDecoratorIceCream : IIceCream
     {
-        int Cost();
     }
     //Implementation of Decorator
     public class SourCream : IDecoratorIceCream
