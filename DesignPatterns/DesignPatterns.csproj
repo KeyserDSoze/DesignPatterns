@@ -76,6 +76,7 @@
     <Compile Include="Structural\Bridge\Bridge.cs" />
     <Compile Include="Structural\Composite\SimpleComposite.cs" />
     <Compile Include="Structural\Composite\HtmlComposite.cs" />
+    <Compile Include="Structural\Decorator\AbstractDecorator.cs" />
     <Compile Include="Structural\Decorator\SimpleDecorator.cs" />
   </ItemGroup>
   <ItemGroup>

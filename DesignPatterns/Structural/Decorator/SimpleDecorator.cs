@@ -41,6 +41,7 @@ namespace DesignPatterns.Structural.Decorator
     //decorator
     public interface IDecoratorIceCream : IIceCream
     {
+        //put another method if you need
     }
     //Implementation of Decorator
     public class SourCream : IDecoratorIceCream
