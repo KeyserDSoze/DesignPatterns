@@ -2,6 +2,7 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,14 +19,10 @@ namespace DesignPatterns.Creational.ObjectPool
                 Parallel.For(0, 100, (i, loopState) =>
                 {
                     MyQueueItem myQueueItem = objectPool.GetObject();
-                    Console.CursorLeft = 0;
-                    // This is the bottleneck in our application. All threads in this loop
-                    // must serialize their access to the static Console class.
-                    Console.WriteLine(i + " - {0:####.####}", myQueueItem.GetValue(i));
+                    Console.WriteLine(i + " - {0:#######}", myQueueItem.GetValue());
                     objectPool.PutObject(myQueueItem);
                 });
-                //In this case the waiting for the end of all process doesn't matter. When you start the debug you can see in output about 20 operations not all 100.
-                //But I repeat it doesn't matter in this case, we're not studying parallel.for
+                Console.WriteLine("Concurrency objects created: " + objectPool.Count);
                 return null;
             }
         }
@@ -52,18 +49,33 @@ namespace DesignPatterns.Creational.ObjectPool
         {
             this.concurrentBag.Add(item);
         }
+        public int Count
+        {
+            get { return this.concurrentBag.Count; }
+        }
     }
 
     public class MyQueueItem
     {
-        public int Nums { get; set; }
-        public double GetValue(long i)
+        public int Number { get; set; }
+        public double GetValue()
         {
-            return Math.Sqrt(Nums * (i + 1));
+            return Number;
         }
         public MyQueueItem()
         {
-            Nums = new Random().Next();
+            this.Number = getRandomNumber(10000);
+        }
+        private int getRandomNumber(int maxNotIncluding)
+        {
+            int value = 0;
+            using (RNGCryptoServiceProvider Gen = new RNGCryptoServiceProvider()){
+                byte[] randomNumber = new byte[1];
+                Gen.GetBytes(randomNumber);
+                int rand = Convert.ToInt32(randomNumber[0]);
+                value = rand * maxNotIncluding / 255;
+            }
+            return value;
         }
     }
 }
