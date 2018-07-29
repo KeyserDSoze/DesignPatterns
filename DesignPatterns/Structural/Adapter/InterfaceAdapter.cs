@@ -22,6 +22,7 @@ namespace DesignPatterns.Structural.Adapter
     {
         void Send();
     }
+    //adapter
     public class Message : IMessage
     {
         private SpecialMessage specialMessage;
@@ -35,6 +36,7 @@ namespace DesignPatterns.Structural.Adapter
             this.specialMessage.SpecialSend(this.Text);
         }
     }
+    //adaptee
     public class SpecialMessage
     {
         public void SpecialSend(string text)

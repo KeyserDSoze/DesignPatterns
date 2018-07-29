@@ -74,6 +74,8 @@
     <Compile Include="Structural\Adapter\Adapter.cs" />
     <Compile Include="Structural\Adapter\InterfaceAdapter.cs" />
     <Compile Include="Structural\Bridge\Bridge.cs" />
+    <Compile Include="Structural\Composite\SimpleComposite.cs" />
+    <Compile Include="Structural\Composite\HtmlComposite.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
