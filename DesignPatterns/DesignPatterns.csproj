@@ -79,6 +79,7 @@
     <Compile Include="Structural\Decorator\AbstractDecorator.cs" />
     <Compile Include="Structural\Decorator\SimpleDecorator.cs" />
     <Compile Include="Structural\Facade\SimpleFacade.cs" />
+    <Compile Include="Structural\FlyWeight\SimpleFlyWeight.cs" />
     <Compile Include="Structural\Proxy\SimpleProxy.cs" />
   </ItemGroup>
   <ItemGroup>
