@@ -78,6 +78,8 @@
     <Compile Include="Structural\Composite\HtmlComposite.cs" />
     <Compile Include="Structural\Decorator\AbstractDecorator.cs" />
     <Compile Include="Structural\Decorator\SimpleDecorator.cs" />
+    <Compile Include="Structural\Facade\SimpleFacade.cs" />
+    <Compile Include="Structural\Proxy\SimpleProxy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
