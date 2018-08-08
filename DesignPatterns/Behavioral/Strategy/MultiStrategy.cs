@@ -12,8 +12,10 @@ namespace DesignPatterns.Behavioral.MultiStrategy
         {
             get
             {
+                Console.WriteLine("Normal Cat");
                 Cat normalCat = new Cat(new SmallJump(), new NormaEat(), new NormalMeow());
                 normalCat.Show();
+                Console.WriteLine("Super Cat");
                 Cat superCat = new Cat(new BigJump(), new NormaEat(), new Roar());
                 superCat.Show();
                 return null;

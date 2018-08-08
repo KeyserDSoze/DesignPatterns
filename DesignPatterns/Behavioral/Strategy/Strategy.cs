@@ -12,10 +12,12 @@ namespace DesignPatterns.Behavioral.Strategy
         {
             get
             {
+                Console.WriteLine("Client A");
                 Client client = new Client(new NormalBehavior());
                 client.Run();
+                Console.WriteLine("Client B");
                 Client superClient = new Client(new SuperBehavior());
-                client.Run();
+                superClient.Run();
                 return null;
             }
         }
