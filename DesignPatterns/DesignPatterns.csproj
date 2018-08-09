@@ -42,9 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behavioral\Command\Command.cs" />
     <Compile Include="Behavioral\Observer\Observer.cs" />
     <Compile Include="Behavioral\Strategy\MultiStrategy.cs" />
     <Compile Include="Behavioral\Strategy\Strategy.cs" />
+    <Compile Include="Behavioral\TemplateMethod\TemplateMethod.cs" />
     <Compile Include="Creational\AbstractFactory\AbstractFactory.cs" />
     <Compile Include="Creational\Builder\Builder.cs" />
     <Compile Include="Creational\Factory\Factory.cs" />
