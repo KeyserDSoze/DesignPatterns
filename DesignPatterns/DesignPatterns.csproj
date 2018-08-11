@@ -8,9 +8,10 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>DesignPatterns</RootNamespace>
     <AssemblyName>DesignPatterns</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behavioral\ChainOfResponsibility\ChainOfResponsibility.cs" />
     <Compile Include="Behavioral\Command\Command.cs" />
+    <Compile Include="Behavioral\Interpreter\Interpreter.cs" />
     <Compile Include="Behavioral\Iterator\Iterator.cs" />
     <Compile Include="Behavioral\Observer\Observer.cs" />
     <Compile Include="Behavioral\State\State.cs" />
