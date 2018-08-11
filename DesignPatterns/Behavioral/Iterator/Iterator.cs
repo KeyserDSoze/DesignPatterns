@@ -12,17 +12,17 @@ namespace DesignPatterns.Behavioral.Iterator
         {
             get
             {
-                IItem rightWeapon = new Weapon();
-                IItem leftWeapon = new Weapon();
-                IItem armor = new Armor();
+                IItem rightWeapon = new Weapon() { Label = "Ice Sword" };
+                IItem leftWeapon = new Weapon() { Label = "Fire Sword" };
+                IItem armor = new Armor() { Label = "Hardrockmail" };
                 List<IItem> bag = new List<IItem>();
-                bag.Add(new Potion());
-                bag.Add(new Armor());
-                bag.Add(new Potion());
-                bag.Add(new Weapon());
-                bag.Add(new Potion());
-                bag.Add(new Armor());
-                bag.Add(new Weapon());
+                bag.Add(new Potion() { Label = "Mana" });
+                bag.Add(new Armor() { Label = "Blackmail" });
+                bag.Add(new Potion() { Label = "Life" });
+                bag.Add(new Weapon() { Label = "Hard Axe" });
+                bag.Add(new Potion() { Label = "Mana" });
+                bag.Add(new Armor() { Label = "Platemail" });
+                bag.Add(new Weapon() { Label = "Light Sword" });
                 Inventory inventory = new Inventory(rightWeapon, leftWeapon, armor, bag);
                 IInventoryIterator inventoryIterator = inventory.GetIterator();
                 while (inventoryIterator.HasItem())
@@ -47,30 +47,33 @@ namespace DesignPatterns.Behavioral.Iterator
     }
     public interface IItem
     {
-
+        string Label { get; set; }
     }
     public class Weapon : IItem
     {
         public int Damage { get; set; } = 1;
+        public string Label { get; set; }
         public override string ToString()
         {
-            return "Increase damage for: " + this.Damage.ToString() + " points";
+            return this.Label + ": increase damage for " + this.Damage.ToString() + " points";
         }
     }
     public class Armor : IItem
     {
         public int Defense { get; set; } = 3;
+        public string Label { get; set; }
         public override string ToString()
         {
-            return "Increase defense for: " + this.Defense.ToString() + " points";
+            return this.Label + ": increase defense for " + this.Defense.ToString() + " points";
         }
     }
     public class Potion : IItem
     {
         public int Hp { get; set; } = 2;
+        public string Label { get; set; }
         public override string ToString()
         {
-            return "Possible Restored Hp: " + this.Hp.ToString();
+            return "Potion of " + this.Label + ": " + this.Hp.ToString();
         }
     }
     public class Inventory : IInventory
