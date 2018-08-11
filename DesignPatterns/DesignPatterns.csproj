@@ -47,6 +47,7 @@
     <Compile Include="Behavioral\Command\Command.cs" />
     <Compile Include="Behavioral\Interpreter\Interpreter.cs" />
     <Compile Include="Behavioral\Iterator\Iterator.cs" />
+    <Compile Include="Behavioral\Mediator\Mediator.cs" />
     <Compile Include="Behavioral\Observer\Observer.cs" />
     <Compile Include="Behavioral\State\State.cs" />
     <Compile Include="Behavioral\Strategy\MultiStrategy.cs" />
