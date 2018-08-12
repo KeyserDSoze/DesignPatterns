@@ -99,6 +99,31 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Behavioral\ChainOfResponsibility\chainofresponsibility.gif" />
+    <Content Include="Behavioral\Command\command.gif" />
+    <Content Include="Behavioral\Interpreter\interpreter.gif" />
+    <Content Include="Behavioral\Iterator\iterator.gif" />
+    <Content Include="Behavioral\Mediator\mediator.gif" />
+    <Content Include="Behavioral\Memento\memento.gif" />
+    <Content Include="Behavioral\NullObject\nullobject.png" />
+    <Content Include="Behavioral\Observer\observer.gif" />
+    <Content Include="Behavioral\State\state.gif" />
+    <Content Include="Behavioral\Strategy\strategy.gif" />
+    <Content Include="Behavioral\TemplateMethod\template.gif" />
+    <Content Include="Behavioral\Visitor\visitor.gif" />
+    <Content Include="Creational\AbstractFactory\abstractFactory.gif" />
+    <Content Include="Creational\Builder\builder.gif" />
+    <Content Include="Creational\Factory\factory.gif" />
+    <Content Include="Creational\Prototype\prototype.gif" />
+    <Content Include="Creational\Singleton\singleton.gif" />
+    <Content Include="Structural\Adapter\adapter.gif" />
+    <Content Include="Structural\Bridge\bridge.gif" />
+    <Content Include="Structural\Composite\composite.gif" />
+    <Content Include="Structural\Decorator\decorator.gif" />
+    <Content Include="Structural\Facade\facade.gif" />
+    <Content Include="Structural\FlyWeight\flyweight.gif" />
+    <Content Include="Structural\Proxy\proxy.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
