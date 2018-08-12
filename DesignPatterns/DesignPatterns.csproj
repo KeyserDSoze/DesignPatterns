@@ -49,6 +49,7 @@
     <Compile Include="Behavioral\Iterator\Iterator.cs" />
     <Compile Include="Behavioral\Mediator\Mediator.cs" />
     <Compile Include="Behavioral\Memento\Memento.cs" />
+    <Compile Include="Behavioral\NullObject\NullObject.cs" />
     <Compile Include="Behavioral\Observer\Observer.cs" />
     <Compile Include="Behavioral\State\State.cs" />
     <Compile Include="Behavioral\Strategy\MultiStrategy.cs" />
