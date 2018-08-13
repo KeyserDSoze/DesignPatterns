@@ -101,6 +101,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Behavioral\ChainOfResponsibility\chainofresponsibility.gif" />
     <Content Include="Behavioral\Command\command.gif" />
     <Content Include="Behavioral\Interpreter\interpreter.gif" />
     <Content Include="Behavioral\Iterator\iterator.gif" />
