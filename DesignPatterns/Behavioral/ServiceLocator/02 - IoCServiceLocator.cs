@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.Creational.ServiceLocator
+namespace DesignPatterns.Behavioral.ServiceLocator
 {
     public class IoCServiceLocator : DesignPattern, IDesignPattern
     {

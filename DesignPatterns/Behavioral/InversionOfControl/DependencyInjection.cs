@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.Creational.InversionOfControl
+namespace DesignPatterns.Behavioral.InversionOfControl
 {
     public class DependencyInjection : DesignPattern, IDesignPattern 
     {
