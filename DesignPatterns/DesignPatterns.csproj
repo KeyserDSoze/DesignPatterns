@@ -67,6 +67,7 @@
     <Compile Include="Creational\ServiceLocator\IoCServiceLocator.cs" />
     <Compile Include="Creational\ServiceLocator\LazyServiceLocator.cs" />
     <Compile Include="Creational\ServiceLocator\ServiceLocator.cs" />
+    <Compile Include="Creational\ServiceLocator\SetupMultitonServiceLocator.cs" />
     <Compile Include="Creational\ServiceLocator\SingletonServiceLocator.cs" />
     <Compile Include="Creational\Singleton\03 - DoubleCheckThreadSafeSingleton.cs" />
     <Compile Include="Creational\Singleton\10 - LazyMultiton.cs" />
