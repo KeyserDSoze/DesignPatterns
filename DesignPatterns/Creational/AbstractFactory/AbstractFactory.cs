@@ -68,6 +68,21 @@ namespace DesignPatterns.Creational.AbstractFactory
             Console.WriteLine("MyCircle");
         }
     }
+    public class MyRectangle2 : Rectangle
+    {
+        public override void Print()
+        {
+            Console.WriteLine("MyRectangle2");
+        }
+    }
+
+    public class MyCircle2 : Circle
+    {
+        public override void Print()
+        {
+            Console.WriteLine("MyCircle2");
+        }
+    }
 
     public class MyShapeFactory : IShapeFactory
     {
@@ -86,13 +101,13 @@ namespace DesignPatterns.Creational.AbstractFactory
         public Rectangle CreateRectangle()
         {
             Console.WriteLine("some other stuff to do");
-            return new MyRectangle();
+            return new MyRectangle2();
         }
 
         public Circle CreateCircle()
         {
             Console.WriteLine("some other stuff to do");
-            return new MyCircle();
+            return new MyCircle2();
         }
     }
 }
