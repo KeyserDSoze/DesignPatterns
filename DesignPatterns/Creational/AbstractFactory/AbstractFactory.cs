@@ -17,6 +17,11 @@ namespace DesignPatterns.Creational.AbstractFactory
                 Rectangle r = fac.CreateRectangle();
                 c.Print();
                 r.Print();
+                IShapeFactory fac2 = new MyShapeFactory2();
+                Circle c2 = fac2.CreateCircle();
+                Rectangle r2 = fac2.CreateRectangle();
+                c2.Print();
+                r2.Print();
                 return null;
             }
         }
@@ -73,6 +78,20 @@ namespace DesignPatterns.Creational.AbstractFactory
 
         public Circle CreateCircle()
         {
+            return new MyCircle();
+        }
+    }
+    public class MyShapeFactory2 : IShapeFactory
+    {
+        public Rectangle CreateRectangle()
+        {
+            Console.WriteLine("some other stuff to do");
+            return new MyRectangle();
+        }
+
+        public Circle CreateCircle()
+        {
+            Console.WriteLine("some other stuff to do");
             return new MyCircle();
         }
     }
