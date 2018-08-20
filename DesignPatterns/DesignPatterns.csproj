@@ -133,6 +133,7 @@
     <Content Include="Creational\AbstractFactory\abstractFactory.gif" />
     <Content Include="Creational\Builder\builder.gif" />
     <Content Include="Creational\Factory\factory.gif" />
+    <Content Include="Creational\ObjectPool\ObjectPool.png" />
     <Content Include="Creational\Prototype\prototype.gif" />
     <Content Include="Creational\Singleton\singleton.gif" />
     <Content Include="Structural\Adapter\adapter.gif" />
