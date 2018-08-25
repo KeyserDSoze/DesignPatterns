@@ -15,7 +15,7 @@ namespace DesignPatterns.Behavioral.TemplateMethod
                 AbstractSubscription mySubscription = new MySubscription();
                 mySubscription.MakeSubscription();
                 AbstractSubscription anotherSubscription = new AnotherSubscription();
-                anotherSubscription.MakeSubscription();
+                anotherSubscription.MakeSubscriptionWithoutNotification();
                 return null;
             }
         }
@@ -26,6 +26,11 @@ namespace DesignPatterns.Behavioral.TemplateMethod
         {
             this.Activate();
             this.Notify();
+            this.Bill();
+        }
+        public void MakeSubscriptionWithoutNotification()
+        {
+            this.Activate();
             this.Bill();
         }
         public abstract void Activate();
