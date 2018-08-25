@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.Creational.DependencyInjection
+namespace DesignPatterns.Behavioral.DependencyInjection
 {
     public class DependencyInjection : DesignPattern, IDesignPattern
     {

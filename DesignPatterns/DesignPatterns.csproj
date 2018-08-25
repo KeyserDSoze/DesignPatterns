@@ -81,7 +81,7 @@
     <Compile Include="Creational\AbstractFactory\AbstractFactory.cs" />
     <Compile Include="Creational\Builder\Builder.cs" />
     <Compile Include="Creational\Builder\RealBuilder.cs" />
-    <Compile Include="Creational\DependencyInjection\DependencyInjection.cs" />
+    <Compile Include="Behavioral\DependencyInjection\DependencyInjection.cs" />
     <Compile Include="Creational\Factory\Factory.cs" />
     <Compile Include="Creational\Factory\FiatFactory.cs" />
     <Compile Include="Creational\ObjectPool\ObjectPool.cs" />
