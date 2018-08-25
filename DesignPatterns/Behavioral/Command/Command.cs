@@ -8,7 +8,7 @@ namespace DesignPatterns.Behavioral.Command
 {
     public class Command : DesignPattern, IDesignPattern
     {
-        public static Command Instance
+        public static Command Instance  //Client
         {
             get
             {
@@ -24,16 +24,16 @@ namespace DesignPatterns.Behavioral.Command
             }
         }
     }
-    public abstract class ACommand
+    public abstract class ACommand  //Command
     {
         public abstract void Execute();
         public abstract void UnExecute();
     }
-    public class CalculatorKeyboard : ACommand
+    public class Sum : ACommand  //ConcreteCommand
     {
         private CalculatorCpu calculatorCpu;
         private int value;
-        public CalculatorKeyboard(CalculatorCpu calculatorCpu, int value)
+        public Sum(CalculatorCpu calculatorCpu, int value)
         {
             this.calculatorCpu = calculatorCpu;
             this.value = value;
@@ -47,7 +47,7 @@ namespace DesignPatterns.Behavioral.Command
             this.calculatorCpu.Minus(this.value);
         }
     }
-    public class CalculatorCpu
+    public class CalculatorCpu //Receiver
     {
         private int current = 0;
         public void Plus(int value)
@@ -61,14 +61,14 @@ namespace DesignPatterns.Behavioral.Command
             Console.WriteLine("value now: " + this.current.ToString());
         }
     }
-    public class Client
+    public class Client //Invoker
     {
         private List<ACommand> aCommands = new List<ACommand>();
         private CalculatorCpu calculatorCpu = new CalculatorCpu();
         private int currentPosition = 0;
         public void Compute(int value)
         {
-            ACommand aCommand = new CalculatorKeyboard(this.calculatorCpu, value);
+            ACommand aCommand = new Sum(this.calculatorCpu, value);
             aCommand.Execute();
             this.aCommands = this.aCommands.Take(this.currentPosition).ToList();
             this.aCommands.Add(aCommand);
