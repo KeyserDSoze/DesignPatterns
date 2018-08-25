@@ -12,9 +12,9 @@ namespace DesignPatterns.Behavioral.DependencyInjection
         {
             get
             {
-                Client client = new Client(new Cat()); //dependency injection of cat
+                Client client = new Client(new Cat(), new Eagle()); //dependency injection of cat
                 client.WhoAreYou();
-                Client client2 = new Client(new Dog()); //dependency injection of dog
+                Client client2 = new Client(new Dog(), new Albatros()); //dependency injection of dog
                 client2.WhoAreYou();
                 return null;
             }
@@ -22,32 +22,50 @@ namespace DesignPatterns.Behavioral.DependencyInjection
     }
     public class Client
     {
-        private IAnimal animal;
-        public Client(IAnimal animal)
+        private IMammal mammal;
+        private Bird bird;
+        public Client(IMammal mammal, Bird bird)
         {
-            this.animal = animal;
+            this.mammal = mammal;
+            this.bird = bird;
         }
         public void WhoAreYou()
         {
-            this.animal.SayWhatIAm();
+            this.mammal.SayWhatIAm();
+            this.bird.SayWhatIAm();
         }
     }
-    public interface IAnimal
+    public interface IMammal
     {
         void SayWhatIAm();
     }
-    public class Cat : IAnimal
+    public class Cat : IMammal
     {
         public void SayWhatIAm()
         {
             Console.WriteLine("I'm a cat");
         }
     }
-    public class Dog : IAnimal
+    public class Dog : IMammal
     {
         public void SayWhatIAm()
         {
             Console.WriteLine("I'm a dog");
         }
+    }
+    public abstract class Bird
+    {
+        public void SayWhatIAm()
+        {
+            Console.WriteLine("I'm a " + this.GetType().Name);
+        }
+    }
+    public class Eagle : Bird
+    {
+
+    }
+    public class Albatros : Bird
+    {
+
     }
 }
