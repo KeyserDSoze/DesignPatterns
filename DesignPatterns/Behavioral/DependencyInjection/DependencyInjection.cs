@@ -12,9 +12,11 @@ namespace DesignPatterns.Behavioral.DependencyInjection
         {
             get
             {
-                Client client = new Client(new Cat(), new Eagle()); //dependency injection of cat
+                Client client = new Client(new Cat()) { bird = new Eagle() }; //dependency injection of cat
+                client.SetDependency(new Turtle());
                 client.WhoAreYou();
-                Client client2 = new Client(new Dog(), new Albatros()); //dependency injection of dog
+                Client client2 = new Client(new Dog()) { bird = new Albatros() }; //dependency injection of dog
+                client2.SetDependency(new Lizard());
                 client2.WhoAreYou();
                 return null;
             }
@@ -23,16 +25,21 @@ namespace DesignPatterns.Behavioral.DependencyInjection
     public class Client
     {
         private IMammal mammal;
-        private Bird bird;
-        public Client(IMammal mammal, Bird bird)
+        public Bird bird { get; set; }
+        private IReptile reptile;
+        public Client(IMammal mammal)
         {
             this.mammal = mammal;
-            this.bird = bird;
+        }
+        public void SetDependency(IReptile reptile)
+        {
+            this.reptile = reptile;
         }
         public void WhoAreYou()
         {
             this.mammal.SayWhatIAm();
             this.bird.SayWhatIAm();
+            this.reptile.SayWhatIAm();
         }
     }
     public interface IMammal
@@ -67,5 +74,23 @@ namespace DesignPatterns.Behavioral.DependencyInjection
     public class Albatros : Bird
     {
 
+    }
+    public interface IReptile
+    {
+        void SayWhatIAm();
+    }
+    public class Turtle : IReptile
+    {
+        public void SayWhatIAm()
+        {
+            Console.WriteLine("I'm a Turtle");
+        }
+    }
+    public class Lizard : IReptile
+    {
+        public void SayWhatIAm()
+        {
+            Console.WriteLine("I'm a Lizard");
+        }
     }
 }
