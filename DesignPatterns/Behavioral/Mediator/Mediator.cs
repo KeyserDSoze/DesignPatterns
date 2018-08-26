@@ -12,9 +12,9 @@ namespace DesignPatterns.Behavioral.Mediator
         {
             get
             {
-                AUser userA = new ImplementationAUser() { Username = "KeyserDSoze" };
-                AUser userB = new ImplementationBUser() { Username = "Theos" };
-                ChatRoom chatRoom = new ChatRoom();
+                AUser userA = new ImplementationWhatsAppUser() { Username = "KeyserDSoze" };
+                AUser userB = new ImplementationTelegramUser() { Username = "Theos" };
+                WhatsTelegram chatRoom = new WhatsTelegram();
                 chatRoom.Register(userA);
                 chatRoom.Register(userB);
                 chatRoom.Send(userA.Username, userB.Username, "Hi");
@@ -38,14 +38,14 @@ namespace DesignPatterns.Behavioral.Mediator
             }
         }
     }
-    public class ChatRoom : AChatRoom
+    public class WhatsTelegram : AChatRoom
     {
 
     }
     public abstract class AUser
     {
         public string Username { get; set; }
-        private AChatRoom chatRoom = new ChatRoom();  //dependency injection
+        private AChatRoom chatRoom = new WhatsTelegram();  //dependency injection
         public void Send(string to, string message)
         {
             chatRoom.Send(this.Username, to, message);
@@ -57,14 +57,14 @@ namespace DesignPatterns.Behavioral.Mediator
         }
     }
     //two different implementation cause a different data retrieving or other
-    public class ImplementationAUser : AUser
+    public class ImplementationWhatsAppUser : AUser
     {
         public string Image { get; set; }
         public string Description { get; set; }
     }
-    public class ImplementationBUser : AUser
+    public class ImplementationTelegramUser : AUser
     {
         public string Thumbnail { get; set; }
-        public List<ImplementationBUser> friends = new List<ImplementationBUser>();
+        public List<ImplementationTelegramUser> friends = new List<ImplementationTelegramUser>();
     }
 }
