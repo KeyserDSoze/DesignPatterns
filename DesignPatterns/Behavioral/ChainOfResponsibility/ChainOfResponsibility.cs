@@ -22,25 +22,18 @@ namespace DesignPatterns.Behavioral.ChainOfResponsibility
                 //and here we execute the chain
                 CustomerBase customerBase = new CustomerBase(activation) { UserId = "KeyserDSoze" };
                 Console.WriteLine(customerBase.ToString());
-                //activation.Execute(customerBase, SubscriptionEventType.activation); 
                 //usually it's started from the first chain, but i want to make a more efficient starting
                 //with dependecy injection in customerbase constructor we decide what starts the chain
-                customerBase.Execute(SubscriptionEventType.activation);
+                customerBase.Execute();
                 Console.WriteLine(customerBase.ToString());
-                customerBase.Execute(SubscriptionEventType.sendMessage);
+                customerBase.Execute();
                 Console.WriteLine(customerBase.ToString());
-                customerBase.Execute(SubscriptionEventType.bill);
+                customerBase.Execute();
                 Console.WriteLine(customerBase.ToString());
 
                 return null;
             }
         }
-    }
-    public enum SubscriptionEventType
-    {
-        activation,
-        sendMessage,
-        bill
     }
     public class CustomerBase
     {
@@ -53,9 +46,9 @@ namespace DesignPatterns.Behavioral.ChainOfResponsibility
         {
             this.startEvent = startEvent;
         }
-        public void Execute(SubscriptionEventType subscriptionEventType)
+        public void Execute()
         {
-            this.startEvent.Execute(this, subscriptionEventType);
+            this.startEvent.Execute(this);
         }
         public override string ToString()
         {
@@ -65,21 +58,21 @@ namespace DesignPatterns.Behavioral.ChainOfResponsibility
     public interface ISubscriptionEvent  //chain
     {
         void SetNextSubscriptionEvent(ISubscriptionEvent subscriptionEvent);
-        void Execute(CustomerBase customerBase, SubscriptionEventType subscriptionEventType);
+        void Execute(CustomerBase customerBase);
     }
     public class Activation : ISubscriptionEvent
     {
         private ISubscriptionEvent nextSubscriptionEvent;
-        public void Execute(CustomerBase customerBase, SubscriptionEventType subscriptionEventType)
+        public void Execute(CustomerBase customerBase)
         {
-            if (subscriptionEventType == SubscriptionEventType.activation)
+            if (!customerBase.IsActive)
             {
                 customerBase.IsActive = true;
             }
             else
             {
                 //it's possible to implement a check, for example go on next one only if the user is active in this case
-                this.nextSubscriptionEvent.Execute(customerBase, subscriptionEventType);
+                this.nextSubscriptionEvent.Execute(customerBase);
             }
         }
 
@@ -91,15 +84,15 @@ namespace DesignPatterns.Behavioral.ChainOfResponsibility
     public class Message : ISubscriptionEvent
     {
         private ISubscriptionEvent nextSubscriptionEvent;
-        public void Execute(CustomerBase customerBase, SubscriptionEventType subscriptionEventType)
+        public void Execute(CustomerBase customerBase)
         {
-            if (subscriptionEventType == SubscriptionEventType.sendMessage)
+            if (!customerBase.InformativeMessageIsSent)
             {
                 customerBase.InformativeMessageIsSent = true;
             }
             else
             {
-                this.nextSubscriptionEvent.Execute(customerBase, subscriptionEventType);
+                this.nextSubscriptionEvent.Execute(customerBase);
             }
         }
 
@@ -111,15 +104,15 @@ namespace DesignPatterns.Behavioral.ChainOfResponsibility
     public class Billing : ISubscriptionEvent
     {
         private ISubscriptionEvent nextSubscriptionEvent;
-        public void Execute(CustomerBase customerBase, SubscriptionEventType subscriptionEventType)
+        public void Execute(CustomerBase customerBase)
         {
-            if (subscriptionEventType == SubscriptionEventType.bill)
+            if (customerBase.Billed <= 0)
             {
                 customerBase.Billed = 6;
             }
             else
             {
-                this.nextSubscriptionEvent.Execute(customerBase, subscriptionEventType);
+                this.nextSubscriptionEvent.Execute(customerBase);
             }
         }
 
